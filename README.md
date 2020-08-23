@@ -3,6 +3,6 @@
 A new Flutter application.
 
 
-![alt text](https://github.com/Lolliwin/hka_ree_warr/blob/screen_shorts/master/home.png?raw=true)
+![alt text](https://github.com/Lolliwin/hka_ree_warr/blob/screen_shorts/home.png?raw=true)
 
 
