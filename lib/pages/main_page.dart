@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hka_ree_warr/pages/come_soon_page.dart';
 import 'package:hka_ree_warr/pages/home_page.dart';
 import 'package:hka_ree_warr/pages/search_page.dart';
 import 'package:hka_ree_warr/themes/light_color.dart';
@@ -28,7 +29,15 @@ class _MainPageState extends State<MainPage> {
     switch (_selectedIndex) {
       case 0:
         return HomePage();
-
+        break;
+      case 1:
+        return ComeSoonPage();
+        break;
+      case 2:
+        return ComeSoonPage();
+        break;
+      case 3:
+        return ComeSoonPage();
         break;
     }
   }
