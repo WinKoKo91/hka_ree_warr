@@ -1,0 +1,9 @@
+{
+  "greeting_title": "Hello!",
+  "greeting_desc":  " what are you looking for?",
+  "category_flight": "FLIGHTS",
+  "category_hotel": "HOTELS",
+  "category_event": "EVENTS",
+  "category_food": "FOODS",
+  "best_experience": "Best Experience"
+}

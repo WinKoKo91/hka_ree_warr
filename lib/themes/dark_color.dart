@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class DarkColor{
+class LightColor{
 
-  static const Color background = Color(0XFFFFFFFF);
+  static const Color background = Colors.black;
 
-  static const Color titleTextColor = const Color(0xff1d2635);
-  static const Color subtitleTextColor = const Color(0xff797878);
+  static const Color titleTextColor = const Color(0xffffffff);
+  static const Color subtitleTextColor = const Color(0xffededed);
 
 
   static const Color skyBlue = Color(0xff2890c8);

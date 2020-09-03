@@ -4,25 +4,42 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'light_color.dart';
 
-class AppTheme {
-  const AppTheme();
+class AppTheme extends ChangeNotifier {
+  static bool _isDark = false;
+
+  ThemeData currentTheme() {
+    return _isDark ? darkTheme : lightTheme;
+  }
 
   static ThemeData lightTheme = ThemeData(
-      backgroundColor: LightColor.background,
-      primaryColor: LightColor.background,
-      cardTheme: CardTheme(color: LightColor.background),
-      textTheme: TextTheme(bodyText1: TextStyle(color: LightColor.black)),
-      iconTheme: IconThemeData(color: LightColor.iconColor),
-      bottomAppBarColor: LightColor.background,
-      dividerColor: LightColor.lightGrey,
+      backgroundColor: DarkColor.background,
+      primaryColor: DarkColor.background,
+      cardTheme: CardTheme(color: DarkColor.background),
+      textTheme: GoogleFonts.padaukTextTheme(
+        TextTheme(bodyText1: TextStyle(color: DarkColor.black)),
+      ),
+      iconTheme: IconThemeData(color: DarkColor.iconColor),
+      bottomAppBarColor: DarkColor.background,
+      dividerColor: DarkColor.lightGrey,
       primaryTextTheme:
-          TextTheme(bodyText1: TextStyle(color: LightColor.titleTextColor)));
+          TextTheme(bodyText1: TextStyle(color: DarkColor.titleTextColor)));
+
+  static ThemeData darkTheme = ThemeData(
+      backgroundColor: DarkColor.background,
+      primaryColor: DarkColor.background,
+      cardTheme: CardTheme(color: DarkColor.background),
+      textTheme: TextTheme(bodyText1: TextStyle(color: DarkColor.black)),
+      iconTheme: IconThemeData(color: DarkColor.iconColor),
+      bottomAppBarColor: DarkColor.background,
+      dividerColor: DarkColor.lightGrey,
+      primaryTextTheme:
+          TextTheme(bodyText1: TextStyle(color: DarkColor.titleTextColor)));
 
   static TextStyle titleStyle =
-      const TextStyle(color: LightColor.titleTextColor, fontSize: 16);
+      const TextStyle(color: DarkColor.titleTextColor, fontSize: 16);
 
   static TextStyle subTitleStyle =
-      const TextStyle(color: LightColor.subtitleTextColor, fontSize: 12);
+      const TextStyle(color: DarkColor.subtitleTextColor, fontSize: 12);
 
   static TextStyle h1Style =
       const TextStyle(fontSize: 24, fontWeight: FontWeight.bold);
@@ -32,8 +49,6 @@ class AppTheme {
   static TextStyle h4Style = const TextStyle(fontSize: 18);
   static TextStyle h5Style = const TextStyle(fontSize: 16);
   static TextStyle h6Style = const TextStyle(fontSize: 14);
-
-
 
   static List<BoxShadow> shadow = <BoxShadow>[
     BoxShadow(color: Color(0xfff8f8f8), blurRadius: 10, spreadRadius: 25)

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hka_ree_warr/main.dart';
+import 'package:hka_ree_warr/models/language.dart';
 import 'package:hka_ree_warr/pages/come_soon_page.dart';
 import 'package:hka_ree_warr/pages/home_page.dart';
 import 'package:hka_ree_warr/pages/search_page.dart';
@@ -42,7 +44,7 @@ class _MainPageState extends State<MainPage> {
     }
   }
 
-  Widget _icon(IconData icon, {Color color = LightColor.iconColor}) {
+  Widget _icon(IconData icon, {Color color = DarkColor.iconColor}) {
     return Container(
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -58,6 +60,23 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
+    void onLanguageChange(Language language) {
+      Locale _temp;
+      switch (language.countryCode) {
+        case 'en':
+          _temp = Locale(language.countryCode, 'US');
+          break;
+        case 'my':
+          _temp = Locale(language.countryCode, 'MM');
+          break;
+
+        default:
+          _temp = Locale(language.countryCode, 'US');
+      }
+
+      MyApp.setLanguage(context, _temp);
+    }
+
     Widget _appBar() {
       return Container(
         padding: AppTheme.padding,
@@ -68,6 +87,29 @@ class _MainPageState extends State<MainPage> {
               quarterTurns: 4,
               child: _icon(Icons.sort, color: Colors.black54),
             ),
+            DropdownButton(
+                underline: SizedBox(),
+                icon: Icon(
+                  Icons.language,
+                  color: Colors.black54,
+                ),
+                items: Language.languageList()
+                    .map<DropdownMenuItem<Language>>(
+                        (language) => DropdownMenuItem(
+                            value: language,
+                            child: Row(
+                              children: [
+                                Text(language.flag),
+                                SizedBox(
+                                  width: 4,
+                                ),
+                                Text(language.name),
+                              ],
+                            )))
+                    .toList(),
+                onChanged: (language) {
+                  onLanguageChange(language);
+                }),
           ],
         ),
       );
