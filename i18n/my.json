@@ -1,10 +1,10 @@
 
 {
   "greeting_title": "မင်္ဂလာပါ!",
-  "greeting_desc":  " အကောင်းဆုံးခရီစဉ်မျာရှာဖွေပါ",
-  "category_flight": "လေကြောင်",
+  "greeting_desc":  " အကောင်းဆုံးခရီးစဉ်မျာရှာဖွေပါ",
+  "category_flight": "လေကြောင်း",
   "category_hotel": "ဟိုတယ်",
   "category_event": "ပွဲတော်",
   "category_food": "အစားအသောက်",
-  "best_experience": "ရေပန်းအစားဆုံးနေရာမျာ"
+  "best_experience": "ရေပန်းအစားဆုံးနေရာများ"
 }
