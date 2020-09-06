@@ -19,7 +19,7 @@ class CategoryItem extends StatelessWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(13)),
               color: backgroundColor,
-              boxShadow: AppTheme.shadow),
+            /*  boxShadow: AppTheme.shadow*/),
           child: Icon(
             icon,
             color: color,
@@ -30,7 +30,6 @@ class CategoryItem extends StatelessWidget {
         ),
         Text(
           title,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 11,color: Colors.black),
         ),
       ],
     );

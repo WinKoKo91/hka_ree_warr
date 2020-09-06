@@ -167,11 +167,7 @@ class _PlaceDetailPageState extends State<PlaceDetailPage>
             ),
             Text(
               "Description Mandalay is a city and former royal capital in northern Myanmar (formerly Burma) on the Irrawaddy River.",
-              style: TextStyle(
-                  color: Colors.black54,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  height: 1.5),
+             style: Theme.of(context).textTheme.bodyText2,
             ),
             SizedBox(
               height: 16,
@@ -256,6 +252,7 @@ class _PlaceDetailPageState extends State<PlaceDetailPage>
     }
 
     return Scaffold(
+      backgroundColor: Theme.of(context).backgroundColor,
       body: SafeArea(
         top: false,
         child: Container(

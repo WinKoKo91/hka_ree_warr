@@ -53,20 +53,19 @@ class _HomePageState extends State<HomePage> {
     return Container(
       padding: AppTheme.padding,
       child: RichText(
+
           text: new TextSpan(
-        style: Theme.of(context).textTheme.headline4,
         children: [
           new TextSpan(
             text: getTranslatedValue(context, 'greeting_title'),
-            style: GoogleFonts.padauk(
-                textStyle: TextStyle(
-                    color: Colors.pinkAccent.shade100,
-                    fontWeight: FontWeight.w600)),
+            style: TextStyle(
+                color: Colors.pinkAccent.shade100,
+                fontSize: 32,
+                fontWeight: FontWeight.w600),
           ),
           new TextSpan(
               text: getTranslatedValue(context, 'greeting_desc'),
-              style: GoogleFonts.padauk(
-                  textStyle: TextStyle(color: Colors.black87))),
+              style: Theme.of(context).textTheme.headline6),
         ],
       )),
     );

@@ -1,34 +1,35 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hka_ree_warr/resource/prefs.dart';
+import 'package:hka_ree_warr/themes/dark_color.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'light_color.dart';
 
 class AppTheme extends ChangeNotifier {
-  static bool _isDark = false;
-
-  ThemeData currentTheme() {
-    return _isDark ? darkTheme : lightTheme;
-  }
-
   static ThemeData lightTheme = ThemeData(
-      backgroundColor: DarkColor.background,
-      primaryColor: DarkColor.background,
-      cardTheme: CardTheme(color: DarkColor.background),
-      textTheme: GoogleFonts.padaukTextTheme(
-        TextTheme(bodyText1: TextStyle(color: DarkColor.black)),
-      ),
-      iconTheme: IconThemeData(color: DarkColor.iconColor),
-      bottomAppBarColor: DarkColor.background,
-      dividerColor: DarkColor.lightGrey,
+      backgroundColor: LightColor.background,
+      primaryColor: LightColor.background,
+      primaryColorBrightness: Brightness.light,
+      brightness: Brightness.light,
+      canvasColor: Colors.white,
+      scaffoldBackgroundColor: LightColor.background,
+      cardTheme: CardTheme(color: LightColor.background),
+      iconTheme: IconThemeData(color: LightColor.iconColor),
+      bottomAppBarColor: LightColor.background,
+      dividerColor: LightColor.lightGrey,
       primaryTextTheme:
-          TextTheme(bodyText1: TextStyle(color: DarkColor.titleTextColor)));
+          TextTheme(bodyText1: TextStyle(color: LightColor.titleTextColor)));
 
   static ThemeData darkTheme = ThemeData(
       backgroundColor: DarkColor.background,
       primaryColor: DarkColor.background,
+      primaryColorBrightness: Brightness.dark,
+      brightness: Brightness.dark,
+      canvasColor: DarkColor.black,
+      scaffoldBackgroundColor: DarkColor.background,
       cardTheme: CardTheme(color: DarkColor.background),
-      textTheme: TextTheme(bodyText1: TextStyle(color: DarkColor.black)),
       iconTheme: IconThemeData(color: DarkColor.iconColor),
       bottomAppBarColor: DarkColor.background,
       dividerColor: DarkColor.lightGrey,
@@ -36,10 +37,10 @@ class AppTheme extends ChangeNotifier {
           TextTheme(bodyText1: TextStyle(color: DarkColor.titleTextColor)));
 
   static TextStyle titleStyle =
-      const TextStyle(color: DarkColor.titleTextColor, fontSize: 16);
+      const TextStyle(color: LightColor.titleTextColor, fontSize: 16);
 
   static TextStyle subTitleStyle =
-      const TextStyle(color: DarkColor.subtitleTextColor, fontSize: 12);
+      const TextStyle(color: LightColor.subtitleTextColor, fontSize: 12);
 
   static TextStyle h1Style =
       const TextStyle(fontSize: 24, fontWeight: FontWeight.bold);
